@@ -1,9 +1,16 @@
+// USED REDUCE()
 function getTotalBooksCount(books) {
-  return books.length;
+  let arr = [];
+  arr.push(books.length);
+  let results = arr.reduce((total) => total);
+  return results
+  
 }
 
+// USED MAP()
 function getTotalAccountsCount(accounts) {
-  return accounts.length;
+  let result = accounts.map((account) => account.email);
+  return result.length
 }
 
 function getBooksBorrowedCount(books) {
@@ -14,7 +21,9 @@ function getBooksBorrowedCount(books) {
       sum ++ }  
    })
   return sum
-}
+} 
+
+
 
 function getMostCommonGenres(books) {
   let results = {};
@@ -33,6 +42,7 @@ function getMostCommonGenres(books) {
   return arr.slice(0,5)
 } 
 
+
 function getMostPopularBooks(books) {
   let arr = [];
   for (const book in books) {
@@ -43,6 +53,8 @@ function getMostPopularBooks(books) {
   return arr.slice(0,5)
 }
 
+
+// USED SORT() & FIND()
 function getMostPopularAuthors(books, authors) {
   const authorCount = {};
   for (const book in books) {
